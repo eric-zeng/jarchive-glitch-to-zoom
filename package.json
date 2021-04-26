@@ -1,0 +1,27 @@
+{
+  "name": "jarchive-glitch-to-zoom",
+  "version": "1.0.0",
+  "description": "Fetches data from J-Archive for Zoom Jeopardy",
+  "main": "index.js",
+  "scripts": {
+    "run": "node gen/main.js",
+    "build": "tsc"
+  },
+  "author": "Eric Zeng",
+  "license": "MIT",
+  "dependencies": {
+    "cli-progress": "^3.9.0",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.1",
+    "jsdom": "^16.5.3",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.9.1",
+    "@types/command-line-args": "^5.0.0",
+    "@types/command-line-usage": "^5.0.1",
+    "@types/jsdom": "^16.2.10",
+    "@types/node-fetch": "^2.5.10",
+    "typescript": "^4.2.4"
+  }
+}
