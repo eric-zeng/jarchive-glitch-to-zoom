@@ -1,13 +1,13 @@
 # Glitch J-Archive API to Zoom Jeopardy Clues Converter
 
 I have been playing Michael Frederickson's excellent
-(Zoom Jeopardy)[http://www.mfrederickson.com/ZoomJeopardy/] game, which has 
+[Zoom Jeopardy](http://www.mfrederickson.com/ZoomJeopardy/) game, which has 
 amazing visuals and is incredible to play, but only has clues from games
 before 2013. I wanted to run games with more up-to-date cultural references, 
 so I made this script to get more recent data from J! Archive!
 
 This script fetches Jeopardy clues from J! Archive, using the
-(J! Archive JSON API)[https://jarchive-json.glitch.me/], and then converts
+[J! Archive JSON API](https://jarchive-json.glitch.me/), and then converts
 the data to a format usable in Zoom Jeopardy.
 
 ## Instructions
