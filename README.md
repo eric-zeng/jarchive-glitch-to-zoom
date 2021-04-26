@@ -11,6 +11,8 @@ This script fetches Jeopardy clues from J! Archive, using the
 the data to a format usable in Zoom Jeopardy.
 
 ## Instructions
+To run this script, you need to have Node.js installed.
+
 1. Download this repository
 ```sh
 git clone https://github.com/eric-zeng/jarchive-glitch-to-zoom.git
