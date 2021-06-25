@@ -76,12 +76,12 @@ const usage = commandLineUsage(usageSections);
  * Glitch to Zoom format.
  * Given an array of clues (from multiple categories), groups clues by array,
  * converts to Zoom jeopardy format, and returns an object mapping category
- * to clues. 
- * @param clues 
- * @param airDate 
- * @param round 
- * @param showNumber 
- * @returns 
+ * to clues.
+ * @param clues
+ * @param airDate
+ * @param round
+ * @param showNumber
+ * @returns
  */
 function cluesByCategory(clues: InputClue[], airDate: string, round: string, showNumber: string) {
   const output: { [category: string]: OutputClue[] } = {};
@@ -112,7 +112,7 @@ function cluesByCategory(clues: InputClue[], airDate: string, round: string, sho
 
     // If the category has a daily double..
     if (clueList.find(c => c.value == 'Daily Double')) {
-      
+
       // Find the position
       const ddIndex = clueList.findIndex(c => c.value == 'Daily Double');
 
@@ -120,9 +120,9 @@ function cluesByCategory(clues: InputClue[], airDate: string, round: string, sho
       const values = clueList
           .filter(c => c.value !== 'Daily Double')
           .map(c => Number.parseInt(c.value!.substring(1)));
-      
+
       // Compute the set difference with the actual set of values
-      const allVals = round == 'Jeopardy!' 
+      const allVals = round == 'Jeopardy!'
         ? [200, 400, 600, 800, 1000]
         : [400, 800, 1200, 1600, 2000];
       const missingVal = allVals.filter(v => !values.includes(v))[0];
@@ -132,7 +132,7 @@ function cluesByCategory(clues: InputClue[], airDate: string, round: string, sho
       output[entry[0]] = clueList;
     }
   }
-  
+
 
   return output;
 }
@@ -140,8 +140,8 @@ function cluesByCategory(clues: InputClue[], airDate: string, round: string, sho
 /**
  * Fetches the show number and dates for all of the Jeopardy episodes in the
  * given season.
- * @param season 
- * @returns 
+ * @param season
+ * @returns
  */
 async function getShows(season: number) {
   try {
@@ -156,11 +156,11 @@ async function getShows(season: number) {
     // Extract show number and date from each episode link
     return Array.from(document.querySelectorAll('table a'))
       .map(a => a.textContent)
+      .filter(text => text?.startsWith('#'))
       .map(text => {
         if (!text) {
           throw 'Error getting link string';
         }
-
         const showNumber = text.match(/(?<=#)([0-9]+)(?=,)/g);
         if (!showNumber || showNumber.length !== 1) {
           throw 'Error getting show number from string: ' + text;
